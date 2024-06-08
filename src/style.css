@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #24232e;
+  --fg: #f0f0f5;
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  width: 100dvw;
+  height: 100dvh;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.theme__items {
+  display: grid;
+  height: 90dvh;
+  grid-template-columns: repeat(3, 1fr);
+  inline-size: 70dvw;
+  margin-inline: auto;
+  gap: 0.25rem;
+}
+
+.theme__items > div {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.25rem;
+}
+
+code {
+  padding: 0.2rem 0.4rem;
+  color: var(--fg);
+  background-color: var(--bg);
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+}
