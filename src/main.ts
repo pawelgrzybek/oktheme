@@ -8,9 +8,9 @@ const bg = "#242232"; /* black */
 
 const colors = [
   { source: "oklch(30% 0.03 290)", color: "#2d2b3c", name: "black" },
-  { source: "oklch(80% 0.12 4.81)", color: "#ff9cb4", name: "red" },
-  { source: "oklch(80% 0.1 150)", color: "#8ed09c", name: "green" },
-  { source: "oklch(80% 0.08 83)", color: "#d7ba82", name: "yellow" },
+  { source: "oklch(70% 0.15 13)", color: "#ec7384", name: "red" },
+  { source: "oklch(85% 0.12 158.64)", color: "#84e6b1", name: "green" },
+  { source: "oklch(85% 0.09 85)", color: "#e9ca89", name: "yellow" },
   { source: "oklch(80% 0.08 267)", color: "#a7bdf2", name: "blue" },
   { source: "oklch(80% 0.11 337)", color: "#eba2d8", name: "magenta" },
   { source: "oklch(80% 0.11 181)", color: "#60d5c2", name: "cyan" },
@@ -21,7 +21,9 @@ const colors = [
     item,
     {
       name: `${item.name} light`,
-      color: colord(item.color).lighten(0.14).toHex(),
+      color: colord(item.color)
+        .lighten(item.name === "black" ? 0.15 : 0.1)
+        .toHex(),
     },
     {
       name: `${item.name} dim`,
