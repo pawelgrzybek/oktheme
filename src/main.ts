@@ -8,7 +8,7 @@ const bg = "#242232"; /* black */
 
 const colors = [
   { source: "oklch(30% 0.03 290)", color: "#2d2b3c", name: "black" },
-  { source: "oklch(70% 0.15 13)", color: "#ec7384", name: "red" },
+  { source: "oklch(70% 0.15 13)", color: "#fd8293", name: "red" },
   { source: "oklch(85% 0.12 158.64)", color: "#84e6b1", name: "green" },
   { source: "oklch(85% 0.09 85)", color: "#e9ca89", name: "yellow" },
   { source: "oklch(80% 0.08 267)", color: "#a7bdf2", name: "blue" },
