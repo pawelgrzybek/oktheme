@@ -8,13 +8,13 @@ importers:
 
   .:
     dependencies:
-      colord:
-        specifier: ^2.9.3
-        version: 2.9.3
-      mix:
-        specifier: link:colord/plugins/mix
-        version: link:colord/plugins/mix
+      chroma-js:
+        specifier: ^3.1.1
+        version: 3.1.1
     devDependencies:
+      '@types/chroma-js':
+        specifier: ^2.4.4
+        version: 2.4.4
       typescript:
         specifier: ^5.2.2
         version: 5.4.5
@@ -242,11 +242,14 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@types/chroma-js@2.4.4':
+    resolution: {integrity: sha512-/DTccpHTaKomqussrn+ciEvfW4k6NAHzNzs/sts1TCqg333qNxOhy8TNIoQCmbGG3Tl8KdEhkGAssb1n3mTXiQ==}
+
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
-  colord@2.9.3:
-    resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
+  chroma-js@3.1.1:
+    resolution: {integrity: sha512-CGr6w73Gi86142RWqZ1RjED/CyduYw2vMTikQZUvr2jGIihnZlMo/Kzm9rYHWDP2pJc6eebwc8CkX0iteBon+A==}
 
   esbuild@0.20.2:
     resolution: {integrity: sha512-WdOOppmUNU+IbZ0PaDiTst80zjnrOkyJNHoKupIcVyU8Lvla3Ugx94VzkQ32Ijqd7UhHJy75gNWDMUekcrSJ6g==}
@@ -431,9 +434,11 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.18.0':
     optional: true
 
+  '@types/chroma-js@2.4.4': {}
+
   '@types/estree@1.0.5': {}
 
-  colord@2.9.3: {}
+  chroma-js@3.1.1: {}
 
   esbuild@0.20.2:
     optionalDependencies:

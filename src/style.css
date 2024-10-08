@@ -4,35 +4,120 @@
   box-sizing: border-box;
 }
 
-:root {
-  --bg: #242232;
-  --fg: #ebeaf2;
+body {
+  color: var(--ok-theme-dark-foreground);
+  background-color: var(--ok-theme-dark-backgrond);
+  text-align: center;
 }
 
 .theme {
-  display: flex;
-  align-items: center;
-  width: 100dvw;
-  height: 100dvh;
-  background: var(--bg);
-  color: var(--fg);
-}
-
-.theme__items {
   display: grid;
-  height: 90dvh;
   grid-template-columns: repeat(3, 1fr);
-  inline-size: 70dvw;
+  grid-template-rows: repeat(8, 100px);
+  gap: 8px;
+  max-inline-size: 1200px;
   margin-inline: auto;
-  gap: 0.25rem;
 }
 
-.theme__items > div {
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 0.25rem;
+.theme__item {
+  background-color: #eee;
+  border-radius: 4px;
+
+  &.theme__item--black-bright {
+    background-color: var(--ok-theme-dark-black-bright);
+  }
+
+  &.theme__item--black {
+    background-color: var(--ok-theme-dark-black);
+  }
+
+  &.theme__item--black-dim {
+    background-color: var(--ok-theme-dark-black-dim);
+  }
+
+  &.theme__item--red-bright {
+    background-color: var(--ok-theme-dark-red-bright);
+  }
+
+  &.theme__item--red {
+    background-color: var(--ok-theme-dark-red);
+  }
+
+  &.theme__item--red-dim {
+    background-color: var(--ok-theme-dark-red-dim);
+  }
+
+  &.theme__item--green-bright {
+    background-color: var(--ok-theme-dark-green-bright);
+  }
+
+  &.theme__item--green {
+    background-color: var(--ok-theme-dark-green);
+  }
+
+  &.theme__item--green-dim {
+    background-color: var(--ok-theme-dark-green-dim);
+  }
+
+  &.theme__item--yellow-bright {
+    background-color: var(--ok-theme-dark-yellow-bright);
+  }
+
+  &.theme__item--yellow {
+    background-color: var(--ok-theme-dark-yellow);
+  }
+
+  &.theme__item--yellow-dim {
+    background-color: var(--ok-theme-dark-yellow-dim);
+  }
+
+  &.theme__item--blue-bright {
+    background-color: var(--ok-theme-dark-blue-bright);
+  }
+
+  &.theme__item--blue {
+    background-color: var(--ok-theme-dark-blue);
+  }
+
+  &.theme__item--blue-dim {
+    background-color: var(--ok-theme-dark-blue-dim);
+  }
+
+  &.theme__item--magenta-bright {
+    background-color: var(--ok-theme-dark-magenta-bright);
+  }
+
+  &.theme__item--magenta {
+    background-color: var(--ok-theme-dark-magenta);
+  }
+
+  &.theme__item--magenta-dim {
+    background-color: var(--ok-theme-dark-magenta-dim);
+  }
+
+  &.theme__item--cyan-bright {
+    background-color: var(--ok-theme-dark-cyan-bright);
+  }
+
+  &.theme__item--cyan {
+    background-color: var(--ok-theme-dark-cyan);
+  }
+
+  &.theme__item--cyan-dim {
+    background-color: var(--ok-theme-dark-cyan-dim);
+  }
+
+  &.theme__item--white-bright {
+    background-color: var(--ok-theme-dark-white-bright);
+  }
+
+  &.theme__item--white {
+    background-color: var(--ok-theme-dark-white);
+  }
+
+  &.theme__item--white-dim {
+    background-color: var(--ok-theme-dark-white-dim);
+  }
 }
 
 code {

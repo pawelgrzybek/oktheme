@@ -1,60 +1,277 @@
-import { colord, extend } from "colord";
-import mixPlugin from "colord/plugins/mix";
+import chroma from "chroma-js";
 
-extend([mixPlugin]);
+const okThemeDarkBackground = chroma.oklch(0.25, 0.03, 280);
+console.log({ okThemeDarkBackground: okThemeDarkBackground.hex() });
 
-// oklch(26% 0.03 290)
-const bg = "#242232"; /* black */
+const DIM_RATIO = 0.85;
+const L = 0.81;
+const L_BRIGHT = 0.87;
 
-const colors = [
-  { source: "oklch(30% 0.03 290)", color: "#2d2b3c", name: "black" },
-  { source: "oklch(75% 0.15 13)", color: "#fd8293", name: "red" },
-  { source: "oklch(85% 0.12 158.64)", color: "#84e6b1", name: "green" },
-  { source: "oklch(85% 0.09 85)", color: "#e9ca89", name: "yellow" },
-  { source: "oklch(80% 0.08 267)", color: "#a7bdf2", name: "blue" },
-  { source: "oklch(80% 0.11 337)", color: "#eba2d8", name: "magenta" },
-  { source: "oklch(80% 0.11 181)", color: "#60d5c2", name: "cyan" },
-  { source: "oklch(94% 0.01 290)", color: "#ebeaf2", name: "white" },
-].reduce<{ name: string; source?: string; color: string }[]>(
-  (acc, item) => [
-    ...acc,
-    item,
-    {
-      name: `${item.name} light`,
-      color: colord(item.color)
-        .lighten(item.name === "black" ? 0.15 : 0.1)
-        .toHex(),
-    },
-    {
-      name: `${item.name} dim`,
-      color: colord(item.color).mix(colord(bg), 0.5).toHex(),
-    },
-  ],
-  [],
+const okThemeDarkBlack = chroma.oklch(0.28, 0.03, 280);
+const okThemeDarkBlackBright = chroma.oklch(0.36, 0.03, 280);
+const okThemeDarkBlackDim = chroma.mix(
+  okThemeDarkBlack,
+  okThemeDarkBackground,
+  DIM_RATIO,
 );
 
-const elmItems = document.querySelector<HTMLElement>(".theme__items");
+// red
+const okThemeDarkRed = chroma.oklch(L, 0.115, 360);
+const okThemeDarkRedBright = chroma.oklch(L_BRIGHT, 0.115, 360);
+const okThemeDarkRedDim = chroma.mix(
+  okThemeDarkRed,
+  okThemeDarkBackground,
+  DIM_RATIO,
+);
 
-for (const color of colors) {
-  console.log({ color });
-  const elmDiv = document.createElement("div");
-  elmDiv.style.backgroundColor = color.color;
-  elmItems?.appendChild(elmDiv);
+// green
+const okThemeDarkGreen = chroma.oklch(L, 0.115, 158);
+const okThemeDarkGreenBright = chroma.oklch(L_BRIGHT, 0.115, 158);
+const okThemeDarkGreenDim = chroma.mix(
+  okThemeDarkGreen,
+  okThemeDarkBackground,
+  DIM_RATIO,
+);
 
-  const elmCodeName = document.createElement("code");
-  const elmCodeNameContent = document.createTextNode(color.name);
-  elmCodeName.appendChild(elmCodeNameContent);
-  elmDiv.appendChild(elmCodeName);
+// yellow
+const okThemeDarkYellow = chroma.oklch(L, 0.065, 72);
+const okThemeDarkYellowBright = chroma.oklch(L_BRIGHT, 0.065, 73);
+const okThemeDarkYellowDim = chroma.mix(
+  okThemeDarkYellow,
+  okThemeDarkBackground,
+  DIM_RATIO,
+);
 
-  const elmCodeHex = document.createElement("code");
-  const elmCodeHexContent = document.createTextNode(color.color);
-  elmCodeHex.appendChild(elmCodeHexContent);
-  elmDiv.appendChild(elmCodeHex);
+// blue
+const okThemeDarkBlue = chroma.oklch(L, 0.08, 267);
+const okThemeDarkBlueBright = chroma.oklch(L_BRIGHT, 0.08, 267);
+const okThemeDarkBlueDim = chroma.mix(
+  okThemeDarkBlue,
+  okThemeDarkBackground,
+  DIM_RATIO,
+);
 
-  if (color.source) {
-    const elmCodeSource = document.createElement("code");
-    const elmCodeCourceContent = document.createTextNode(color.source);
-    elmCodeSource.appendChild(elmCodeCourceContent);
-    elmDiv.appendChild(elmCodeSource);
-  }
-}
+// magenta
+const okThemeDarkMagenta = chroma.oklch(L, 0.11, 301);
+const okThemeDarkMagentaBright = chroma.oklch(L_BRIGHT, 0.11, 301);
+const okThemeDarkMagentaDim = chroma.mix(
+  okThemeDarkMagenta,
+  okThemeDarkBackground,
+  DIM_RATIO,
+);
+
+// cyan
+const okThemeDarkCyan = chroma.oklch(L, 0.11, 181);
+const okThemeDarkCyanBright = chroma.oklch(L_BRIGHT, 0.11, 181);
+const okThemeDarkCyanDim = chroma.mix(
+  okThemeDarkCyan,
+  okThemeDarkBackground,
+  DIM_RATIO,
+);
+
+// white
+const okThemeDarkWhite = chroma.oklch(L, 0.01, 280);
+const okThemeDarkWhiteBright = chroma.oklch(L_BRIGHT, 0.01, 280);
+const okThemeDarkWhiteDim = chroma.mix(
+  okThemeDarkWhite,
+  okThemeDarkBackground,
+  DIM_RATIO,
+);
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-backgrond",
+  syntax: "<color>",
+  inherits: false,
+  initialValue: okThemeDarkBackground.hex(),
+});
+
+const COMMON_PROPERTIES = {
+  syntax: "<color>",
+  inherits: false,
+};
+
+// black
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-black",
+  initialValue: okThemeDarkBlack.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-black-bright",
+  initialValue: okThemeDarkBlackBright.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-black-dim",
+  initialValue: okThemeDarkBlackDim.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+// red
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-red",
+  initialValue: okThemeDarkRed.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-red-bright",
+  initialValue: okThemeDarkRedBright.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-red-dim",
+  initialValue: okThemeDarkRedDim.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+// green
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-green",
+  initialValue: okThemeDarkGreen.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-green-bright",
+  initialValue: okThemeDarkGreenBright.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-green-dim",
+  initialValue: okThemeDarkGreenDim.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+// yellow
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-yellow",
+  initialValue: okThemeDarkYellow.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-yellow-bright",
+  initialValue: okThemeDarkYellowBright.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-yellow-dim",
+  initialValue: okThemeDarkYellowDim.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+// blue
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-blue",
+  initialValue: okThemeDarkBlue.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-blue-bright",
+  initialValue: okThemeDarkBlueBright.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-blue-dim",
+  initialValue: okThemeDarkBlueDim.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+// magenta
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-magenta",
+  initialValue: okThemeDarkMagenta.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-magenta-bright",
+  initialValue: okThemeDarkMagentaBright.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-magenta-dim",
+  initialValue: okThemeDarkMagentaDim.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+// cyan
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-cyan",
+  initialValue: okThemeDarkCyan.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-cyan-bright",
+  initialValue: okThemeDarkCyanBright.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-cyan-dim",
+  initialValue: okThemeDarkCyanDim.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+// white
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-white",
+  initialValue: okThemeDarkWhite.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-white-bright",
+  initialValue: okThemeDarkWhiteBright.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+window.CSS.registerProperty({
+  name: "--ok-theme-dark-white-dim",
+  initialValue: okThemeDarkWhiteDim.hex(),
+  ...COMMON_PROPERTIES,
+});
+
+console.log(
+  JSON.stringify(
+    {
+      Bg: okThemeDarkBackground.hex(),
+      Black: okThemeDarkBlack.hex(),
+      BlackBright: okThemeDarkBlackBright.hex(),
+      BlackDim: okThemeDarkBlackDim.hex(),
+      Red: okThemeDarkRed.hex(),
+      RedBright: okThemeDarkRedBright.hex(),
+      RedDim: okThemeDarkRedDim.hex(),
+      Green: okThemeDarkGreen.hex(),
+      GreenBright: okThemeDarkGreenBright.hex(),
+      GreenDim: okThemeDarkGreenDim.hex(),
+      Yellow: okThemeDarkYellow.hex(),
+      YellowBright: okThemeDarkYellowBright.hex(),
+      YellowDim: okThemeDarkYellowDim.hex(),
+      Blue: okThemeDarkBlue.hex(),
+      BlueBright: okThemeDarkBlueBright.hex(),
+      BlueDim: okThemeDarkBlueDim.hex(),
+      Magenta: okThemeDarkMagenta.hex(),
+      MagentaBright: okThemeDarkMagentaBright.hex(),
+      MagentaDim: okThemeDarkMagentaDim.hex(),
+      Cyan: okThemeDarkCyan.hex(),
+      CyanBright: okThemeDarkCyanBright.hex(),
+      CyanDim: okThemeDarkCyanDim.hex(),
+      White: okThemeDarkWhite.hex(),
+      WhiteBright: okThemeDarkWhiteBright.hex(),
+      WhiteDim: okThemeDarkWhiteDim.hex(),
+    },
+    null,
+    4,
+  ),
+);
