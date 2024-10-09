@@ -1,9 +1,11 @@
+// https://huetone.ardov.me/?palette=N4IgdghgtgpiBcID2BrALgCxrABACgBMIAnFAShABoQMBXGAZwQG1RJYEQAhAGwgGMUVEPyQ8kxJvGYgAxAGYARkoAsBYbIBMAdh3ztIALoBfSm2hxEAJRjrqo8ZJZyAZjEUF%2B8jTHkQVEBBGpuYciADixDAwYMIOElIysgAcAJwwqcoaAGwu-C6pQSZm4BacAJowPOIA7nFiCc6yMPz8ihDe1LIEAIyKPclFIaVh3Dz09Y6Jch69LnZyEACsitowmsEl7JYgALIQAOYxaEH2DU7SckT8uYoaii4QBDAADJuhOwDCAJ4QsWdTJraJYZAhLDRLZL8dz8d4jHYAdQwAEs0HAAY1LrIXNoXLl0XIYCCQeoTIZqGgkGBGM5FMRkQcMGhhGAJFAIDxgkA
+
 import chroma from "chroma-js";
 
 const okThemeDarkBackground = chroma.oklch(0.25, 0.03, 280);
 
 const DIM_RATIO = 0.85;
-const L = 0.75;
+const L = 0.78;
 const L_BRIGHT = 0.86;
 
 const okThemeDarkBlack = chroma.oklch(0.28, 0.03, 280);
@@ -15,8 +17,8 @@ const okThemeDarkBlackDim = chroma.mix(
 );
 
 // red
-const okThemeDarkRed = chroma.oklch(L, 0.075, 360);
-const okThemeDarkRedBright = chroma.oklch(L_BRIGHT, 0.075, 360);
+const okThemeDarkRed = chroma.oklch(L, 0.075, 13);
+const okThemeDarkRedBright = chroma.oklch(L_BRIGHT, 0.075, 13);
 const okThemeDarkRedDim = chroma.mix(
   okThemeDarkRed,
   okThemeDarkBackground,
@@ -244,6 +246,18 @@ window.CSS.registerProperty({
 console.log(
   `%c background: ${okThemeDarkBackground.hex()}`,
   `color: ${okThemeDarkWhite.hex()}; background-color: ${okThemeDarkBackground.hex()}`,
+);
+console.log(
+  `%c black: ${okThemeDarkBlack.hex()}`,
+  `color: ${okThemeDarkWhite.hex()}; background-color: ${okThemeDarkBlack.hex()}`,
+);
+console.log(
+  `%c black light: ${okThemeDarkBlackBright.hex()}`,
+  `color: ${okThemeDarkWhite.hex()}; background-color: ${okThemeDarkBlackBright.hex()}`,
+);
+console.log(
+  `%c black dim: ${okThemeDarkBlackDim.hex()}`,
+  `color: ${okThemeDarkWhite.hex()}; background-color: ${okThemeDarkBlackDim.hex()}`,
 );
 console.log(
   `%c red: ${okThemeDarkRed.hex()}`,
