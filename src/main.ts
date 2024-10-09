@@ -3,8 +3,8 @@ import chroma from "chroma-js";
 const okThemeDarkBackground = chroma.oklch(0.25, 0.03, 280);
 
 const DIM_RATIO = 0.85;
-const L = 0.81;
-const L_BRIGHT = 0.87;
+const L = 0.75;
+const L_BRIGHT = 0.86;
 
 const okThemeDarkBlack = chroma.oklch(0.28, 0.03, 280);
 const okThemeDarkBlackBright = chroma.oklch(0.36, 0.03, 280);
@@ -15,8 +15,8 @@ const okThemeDarkBlackDim = chroma.mix(
 );
 
 // red
-const okThemeDarkRed = chroma.oklch(L, 0.115, 360);
-const okThemeDarkRedBright = chroma.oklch(L_BRIGHT, 0.115, 360);
+const okThemeDarkRed = chroma.oklch(L, 0.075, 360);
+const okThemeDarkRedBright = chroma.oklch(L_BRIGHT, 0.075, 360);
 const okThemeDarkRedDim = chroma.mix(
   okThemeDarkRed,
   okThemeDarkBackground,
@@ -42,8 +42,8 @@ const okThemeDarkYellowDim = chroma.mix(
 );
 
 // blue
-const okThemeDarkBlue = chroma.oklch(L, 0.08, 267);
-const okThemeDarkBlueBright = chroma.oklch(L_BRIGHT, 0.08, 267);
+const okThemeDarkBlue = chroma.oklch(L, 0.065, 267);
+const okThemeDarkBlueBright = chroma.oklch(L_BRIGHT, 0.065, 267);
 const okThemeDarkBlueDim = chroma.mix(
   okThemeDarkBlue,
   okThemeDarkBackground,
@@ -51,8 +51,8 @@ const okThemeDarkBlueDim = chroma.mix(
 );
 
 // magenta
-const okThemeDarkMagenta = chroma.oklch(L, 0.11, 301);
-const okThemeDarkMagentaBright = chroma.oklch(L_BRIGHT, 0.11, 301);
+const okThemeDarkMagenta = chroma.oklch(L, 0.075, 301);
+const okThemeDarkMagentaBright = chroma.oklch(L_BRIGHT, 0.075, 301);
 const okThemeDarkMagentaDim = chroma.mix(
   okThemeDarkMagenta,
   okThemeDarkBackground,
@@ -69,8 +69,8 @@ const okThemeDarkCyanDim = chroma.mix(
 );
 
 // white
-const okThemeDarkWhite = chroma.oklch(L, 0.01, 280);
-const okThemeDarkWhiteBright = chroma.oklch(L_BRIGHT, 0.01, 280);
+const okThemeDarkWhite = chroma.oklch(0.895, 0.01, 280);
+const okThemeDarkWhiteBright = chroma.oklch(0.975, 0.01, 280);
 const okThemeDarkWhiteDim = chroma.mix(
   okThemeDarkWhite,
   okThemeDarkBackground,
