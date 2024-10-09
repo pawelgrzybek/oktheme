@@ -1,7 +1,6 @@
 import chroma from "chroma-js";
 
 const okThemeDarkBackground = chroma.oklch(0.25, 0.03, 280);
-console.log({ okThemeDarkBackground: okThemeDarkBackground.hex() });
 
 const DIM_RATIO = 0.85;
 const L = 0.81;
@@ -243,35 +242,90 @@ window.CSS.registerProperty({
 });
 
 console.log(
-  JSON.stringify(
-    {
-      Bg: okThemeDarkBackground.hex(),
-      Black: okThemeDarkBlack.hex(),
-      BlackBright: okThemeDarkBlackBright.hex(),
-      BlackDim: okThemeDarkBlackDim.hex(),
-      Red: okThemeDarkRed.hex(),
-      RedBright: okThemeDarkRedBright.hex(),
-      RedDim: okThemeDarkRedDim.hex(),
-      Green: okThemeDarkGreen.hex(),
-      GreenBright: okThemeDarkGreenBright.hex(),
-      GreenDim: okThemeDarkGreenDim.hex(),
-      Yellow: okThemeDarkYellow.hex(),
-      YellowBright: okThemeDarkYellowBright.hex(),
-      YellowDim: okThemeDarkYellowDim.hex(),
-      Blue: okThemeDarkBlue.hex(),
-      BlueBright: okThemeDarkBlueBright.hex(),
-      BlueDim: okThemeDarkBlueDim.hex(),
-      Magenta: okThemeDarkMagenta.hex(),
-      MagentaBright: okThemeDarkMagentaBright.hex(),
-      MagentaDim: okThemeDarkMagentaDim.hex(),
-      Cyan: okThemeDarkCyan.hex(),
-      CyanBright: okThemeDarkCyanBright.hex(),
-      CyanDim: okThemeDarkCyanDim.hex(),
-      White: okThemeDarkWhite.hex(),
-      WhiteBright: okThemeDarkWhiteBright.hex(),
-      WhiteDim: okThemeDarkWhiteDim.hex(),
-    },
-    null,
-    4,
-  ),
+  `%c background: ${okThemeDarkBackground.hex()}`,
+  `color: ${okThemeDarkWhite.hex()}; background-color: ${okThemeDarkBackground.hex()}`,
+);
+console.log(
+  `%c red: ${okThemeDarkRed.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkRed.hex()}`,
+);
+console.log(
+  `%c red light: ${okThemeDarkRedBright.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkRedBright.hex()}`,
+);
+console.log(
+  `%c red dim: ${okThemeDarkRedDim.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkRedDim.hex()}`,
+);
+console.log(
+  `%c green: ${okThemeDarkGreen.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkGreen.hex()}`,
+);
+console.log(
+  `%c green light: ${okThemeDarkGreenBright.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkGreenBright.hex()}`,
+);
+console.log(
+  `%c green dim: ${okThemeDarkGreenDim.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkGreenDim.hex()}`,
+);
+console.log(
+  `%c yellow: ${okThemeDarkYellow.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkYellow.hex()}`,
+);
+console.log(
+  `%c yellow light: ${okThemeDarkYellowBright.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkYellowBright.hex()}`,
+);
+console.log(
+  `%c yellow dim: ${okThemeDarkYellowDim.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkYellowDim.hex()}`,
+);
+console.log(
+  `%c blue: ${okThemeDarkBlue.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkBlue.hex()}`,
+);
+console.log(
+  `%c blue light: ${okThemeDarkBlueBright.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkBlueBright.hex()}`,
+);
+console.log(
+  `%c blue dim: ${okThemeDarkBlueDim.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkBlueDim.hex()}`,
+);
+console.log(
+  `%c magenta: ${okThemeDarkMagenta.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkMagenta.hex()}`,
+);
+console.log(
+  `%c magenta light: ${okThemeDarkMagentaBright.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkMagentaBright.hex()}`,
+);
+console.log(
+  `%c magenta dim: ${okThemeDarkMagentaDim.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkMagentaDim.hex()}`,
+);
+console.log(
+  `%c cyan: ${okThemeDarkCyan.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkCyan.hex()}`,
+);
+console.log(
+  `%c cyan light: ${okThemeDarkCyanBright.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkCyanBright.hex()}`,
+);
+console.log(
+  `%c cyan dim: ${okThemeDarkCyanDim.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkCyanDim.hex()}`,
+);
+console.log(
+  `%c white: ${okThemeDarkWhite.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkWhite.hex()}`,
+);
+console.log(
+  `%c white light: ${okThemeDarkWhiteBright.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkWhiteBright.hex()}`,
+);
+console.log(
+  `%c white dim: ${okThemeDarkWhiteDim.hex()}`,
+  `color: ${okThemeDarkBlack.hex()}; background-color: ${okThemeDarkWhiteDim.hex()}`,
 );

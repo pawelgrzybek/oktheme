@@ -5,7 +5,7 @@
 }
 
 body {
-  color: var(--ok-theme-dark-foreground);
+  color: var(--ok-theme-dark-white);
   background-color: var(--ok-theme-dark-backgrond);
   text-align: center;
 }
