@@ -1,15 +1,20 @@
-// https://huetone.ardov.me/?palette=N4IgdghgtgpiBcID2BrALgCxrABACgBMIAnFAShABoQMBXGAZwQG1RJYEQAhAGwgGMUVEPyQ8kxJvGYgAxAGYARkoAsBYbIBMAdh3ztIALoBfSm2hxEAJRjrqo8ZJZyAZjEUF%2B8jTHkQVEBBGpuYciADixDAwYMIOElIysgAcAJwwqcoaAGwu-C6pQSZm4BacAJowPOIA7nFiCc6yMPz8ihDe1LIEAIyKPclFIaVh3Dz09Y6Jch69LnZyEACsitowmsEl7JYgALIQAOYxaEH2DU7SckT8uYoaii4QBDAADJuhOwDCAJ4QsWdTJraJYZAhLDRLZL8dz8d4jHYAdQwAEs0HAAY1LrIXNoXLl0XIYCCQeoTIZqGgkGBGM5FMRkQcMGhhGAJFAIDxgkA
+// https://huetone.ardov.me/?palette=N4IgdghgtgpiBcID2BrALgCxrABACgBMIAnFAShABoQMBXGAZwQG1RJYEQAhAGwgGMUVEPyQ8kxJvGYgAxAGYI8-gBYCw2QCYAbJoDs8gBwgAugF9KbaHEQAlGOuqjxklnIBmBAgEYCAVg13AAYATiIA80twa04AcWIYGDBhZwkpGVl%2BEJg9AhUNQwAjfj0IfMirDkQATRgecQB3FLE0t1kcr35jakyQwr9DflMLSptuHnpml3S5AiCYIPdNDT7Cwq9hqPYxgFkIAHMktAgp1uk5GHkCPXdCjX5NCGy4CuiqkABhAE8IZKcW1znTLeHIwAI9PR6LqqTajTgAdQwAEs0HB-tM2g5Eu5tPd%2BPwvBEzCZqGgkGBGG5CsQkfsMGhhGAJFAIDxhkA
 
 import chroma from "chroma-js";
 
 const okThemeDarkBackground = chroma.oklch(0.25, 0.03, 280);
 
-const DIM_RATIO = 0.85;
 const L = 0.78;
-const L_BRIGHT = 0.86;
+const L_BRIGHT = 0.9;
+const DIM_RATIO = 0.85;
 
-const okThemeDarkBlack = chroma.oklch(0.28, 0.03, 280);
-const okThemeDarkBlackBright = chroma.oklch(0.36, 0.03, 280);
+// black (exception)
+const L_BLACK = 0.28;
+const L_BLACK_BRIGHT = 0.36;
+const C_BLACK = 0.03;
+const H_BLACK = 280;
+const okThemeDarkBlack = chroma.oklch(L_BLACK, C_BLACK, H_BLACK);
+const okThemeDarkBlackBright = chroma.oklch(L_BLACK_BRIGHT, C_BLACK, H_BLACK);
 const okThemeDarkBlackDim = chroma.mix(
   okThemeDarkBlack,
   okThemeDarkBackground,
@@ -17,8 +22,14 @@ const okThemeDarkBlackDim = chroma.mix(
 );
 
 // red
-const okThemeDarkRed = chroma.oklch(L, 0.075, 13);
-const okThemeDarkRedBright = chroma.oklch(L_BRIGHT, 0.075, 13);
+const C_RED = 0.1;
+const H_RED = 13;
+const okThemeDarkRed = chroma.oklch(L, C_RED, H_RED);
+const okThemeDarkRedBright = chroma.oklch(
+  L_BRIGHT,
+  okThemeDarkRed.get("oklch.c") / 2,
+  H_RED,
+);
 const okThemeDarkRedDim = chroma.mix(
   okThemeDarkRed,
   okThemeDarkBackground,
@@ -26,8 +37,14 @@ const okThemeDarkRedDim = chroma.mix(
 );
 
 // green
-const okThemeDarkGreen = chroma.oklch(L, 0.115, 158);
-const okThemeDarkGreenBright = chroma.oklch(L_BRIGHT, 0.115, 158);
+const C_GREEN = 0.08;
+const H_GREEN = 158;
+const okThemeDarkGreen = chroma.oklch(L, C_GREEN, H_GREEN);
+const okThemeDarkGreenBright = chroma.oklch(
+  L_BRIGHT,
+  okThemeDarkGreen.get("oklch.c") / 2,
+  H_GREEN,
+);
 const okThemeDarkGreenDim = chroma.mix(
   okThemeDarkGreen,
   okThemeDarkBackground,
@@ -35,8 +52,14 @@ const okThemeDarkGreenDim = chroma.mix(
 );
 
 // yellow
-const okThemeDarkYellow = chroma.oklch(L, 0.065, 72);
-const okThemeDarkYellowBright = chroma.oklch(L_BRIGHT, 0.065, 73);
+const C_YELLOW = 0.06;
+const H_YELLOW = 85;
+const okThemeDarkYellow = chroma.oklch(L, C_YELLOW, H_YELLOW);
+const okThemeDarkYellowBright = chroma.oklch(
+  L_BRIGHT,
+  okThemeDarkYellow.get("oklch.c") / 2,
+  H_YELLOW,
+);
 const okThemeDarkYellowDim = chroma.mix(
   okThemeDarkYellow,
   okThemeDarkBackground,
@@ -44,8 +67,14 @@ const okThemeDarkYellowDim = chroma.mix(
 );
 
 // blue
-const okThemeDarkBlue = chroma.oklch(L, 0.065, 267);
-const okThemeDarkBlueBright = chroma.oklch(L_BRIGHT, 0.065, 267);
+const C_BLUE = 0.06;
+const H_BLUE = 251;
+const okThemeDarkBlue = chroma.oklch(L, C_BLUE, H_BLUE);
+const okThemeDarkBlueBright = chroma.oklch(
+  L_BRIGHT,
+  okThemeDarkBlue.get("oklch.c") / 2,
+  H_BLUE,
+);
 const okThemeDarkBlueDim = chroma.mix(
   okThemeDarkBlue,
   okThemeDarkBackground,
@@ -53,8 +82,14 @@ const okThemeDarkBlueDim = chroma.mix(
 );
 
 // magenta
-const okThemeDarkMagenta = chroma.oklch(L, 0.075, 301);
-const okThemeDarkMagentaBright = chroma.oklch(L_BRIGHT, 0.075, 301);
+const C_MAGENTA = 0.1;
+const H_MAGENTA = 301;
+const okThemeDarkMagenta = chroma.oklch(L, C_MAGENTA, H_MAGENTA);
+const okThemeDarkMagentaBright = chroma.oklch(
+  L_BRIGHT,
+  okThemeDarkMagenta.get("oklch.c") / 2,
+  H_MAGENTA,
+);
 const okThemeDarkMagentaDim = chroma.mix(
   okThemeDarkMagenta,
   okThemeDarkBackground,
@@ -62,17 +97,27 @@ const okThemeDarkMagentaDim = chroma.mix(
 );
 
 // cyan
-const okThemeDarkCyan = chroma.oklch(L, 0.11, 181);
-const okThemeDarkCyanBright = chroma.oklch(L_BRIGHT, 0.11, 181);
+const C_CYAN = 0.08;
+const H_CYAN = 192;
+const okThemeDarkCyan = chroma.oklch(L, C_CYAN, H_CYAN);
+const okThemeDarkCyanBright = chroma.oklch(
+  L_BRIGHT,
+  okThemeDarkCyan.get("oklch.c") / 2,
+  H_CYAN,
+);
 const okThemeDarkCyanDim = chroma.mix(
   okThemeDarkCyan,
   okThemeDarkBackground,
   DIM_RATIO,
 );
 
-// white
-const okThemeDarkWhite = chroma.oklch(0.895, 0.01, 280);
-const okThemeDarkWhiteBright = chroma.oklch(0.975, 0.01, 280);
+// white (exception)
+const L_WHITE = 0.85;
+const L_WHITE_BRIGHT = 0.95;
+const C_WHITE = 0.01;
+const H_WHITE = 280;
+const okThemeDarkWhite = chroma.oklch(L_WHITE, C_WHITE, H_WHITE);
+const okThemeDarkWhiteBright = chroma.oklch(L_WHITE_BRIGHT, C_WHITE, H_WHITE);
 const okThemeDarkWhiteDim = chroma.mix(
   okThemeDarkWhite,
   okThemeDarkBackground,
