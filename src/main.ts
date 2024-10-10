@@ -1,5 +1,4 @@
-// https://huetone.ardov.me/?palette=N4IgdghgtgpiBcID2BrALgCxrABACgBMIAnFAShABoQMBXGAZwQG1RJYEQAhAGwgGMUVEPyQ8kxJvGYgAxAGYI8-gBYCw2QCYAbJoDs8gBwgAugF9KbaHEQAlGOuqjxklnIBmBAgEYCAVg13AAYATiIA80twa04AcWIYGDBhZwkpGVl%2BEJg9AhUNQwAjfj0IfMirDkQATRgecQB3FLE0t1kcr35jakyQwr9DflMLSptuHnpml3S5AiCYIPdNDT7Cwq9hqPYxgFkIAHMktAgp1uk5GHkCPXdCjX5NCGy4CuiqkABhAE8IZKcW1znTLeHIwAI9PR6LqqTajTgAdQwAEs0HB-tM2g5Eu5tPd%2BPwvBEzCZqGgkGBGG5CsQkfsMGhhGAJFAIDxhkA
-
+// https://huetone.ardov.me/?palette=N4IgdghgtgpiBcID2BrALgCxrABACgBMIAnFAShABoQMBXGAZwQG1RJYEQAhAGwgGMUVEPyQ8kxJvGYgAxAGYI8-gBYCw2QCYAbJoDs8gBwgAugF9KbaHEQAlGOuqjxklnIBmBAgEYCAVg13AAYATiIA80twa04AcWIYGDBhZwkpGVl%2BPRhDAnkNQxV%2BEIhvUwsrDkQATRgecQB3FLE0t1kYPS9%2BY2pMkIAjP0N%2Bcqj2G24eemaXdLkCIJgg900NAf7%2Br1HKiYBZCABzJLQIGdbpORh5Aj13fo1%2BTQgQxO3oqpAAYQBPCGSnFquC6ZbwdGABXp6PTdVRvcacADqGAAlmg4ADZm0HIl3NoHvx%2BF4ImYTNQ0EgwIw3P1iMiDhg0MIwBIoBAeOUgA
 import chroma from "chroma-js";
 
 const okThemeDarkBackground = chroma.oklch(0.25, 0.03, 280);
@@ -37,7 +36,7 @@ const okThemeDarkRedDim = chroma.mix(
 );
 
 // green
-const C_GREEN = 0.08;
+const C_GREEN = 0.09;
 const H_GREEN = 158;
 const okThemeDarkGreen = chroma.oklch(L, C_GREEN, H_GREEN);
 const okThemeDarkGreenBright = chroma.oklch(
