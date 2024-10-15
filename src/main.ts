@@ -1,7 +1,7 @@
-// https://huetone.ardov.me/?palette=N4IgdghgtgpiBcID2BrALgCxrABACgBMIAnFAShABoQMBXGAZwQG1RJYEQAhAGwgGMUVEPyQ8kxJvGYgAxAGYI8-gBYCw2QCYAbJoDs8gBwgAugF9KbaHEQAlGOuqjxklnIBmBAgEYCAVg13AAYATiIA80twa04AcWIYGDBhZwkpGVl%2BPRhDAnkNQxV%2BEIhvUwsrDkQATRgecQB3FLE0t1kYPS9%2BY2pMkIAjP0N%2Bcqj2G24eemaXdLkCIJgg900NAf7%2Br1HKiYBZCABzJLQIGdbpORh5Aj13fo1%2BTQgQxO3oqpAAYQBPCGSnFquC6ZbwdGABXp6PTdVRvcacADqGAAlmg4ADZm0HIl3NoHvx%2BF4ImYTNQ0EgwIw3P1iMiDhg0MIwBIoBAeOUgA
+// https://huetone.ardov.me/?palette=N4IgdghgtgpiBcID2BrALgCxrABACgBMIAnFAShABoQMBXGAZwQG1RJYEQAhAGwgGMUVEPyQ8kxJvGYgAxAGZ%2B8gEYAWAsNkAmABxaAbPIDsIALoBfSm2hxEAJRgbqo8ZJZyAZo4CMBb5o9vAE4CII8zS2sORABxYhgYMGEXCSkZWX4jGB0CeU0dVX4giH8LK3AbTgBNGB5xAHdksVT3WWyCAn5VTX5%2BNQKI8vZbbh56Jtc0uQIABhgZjy1NIOVVjsGokYBZCABzRLQICZbpORh5AiMPZR6tCCCEjYrokABhAE8IJOdmt1OM7wwLIAVk0RiM-B0XSew04AHUMABLNBwH6TVoJBIefQ9TodUEWUzUNBIMCMdzKYiI3YYNDCMASKAQHgRIA
 import chroma from "chroma-js";
 
-const okThemeDarkBackground = chroma.oklch(0.25, 0.03, 280);
+const okThemeDarkBackground = chroma.oklch(0.25, 0.03, 288);
 
 const L = 0.78;
 const L_BRIGHT = 0.9;
@@ -11,7 +11,7 @@ const DIM_RATIO = 0.85;
 const L_BLACK = 0.28;
 const L_BLACK_BRIGHT = 0.36;
 const C_BLACK = 0.03;
-const H_BLACK = 280;
+const H_BLACK = 288;
 const okThemeDarkBlack = chroma.oklch(L_BLACK, C_BLACK, H_BLACK);
 const okThemeDarkBlackBright = chroma.oklch(L_BLACK_BRIGHT, C_BLACK, H_BLACK);
 const okThemeDarkBlackDim = chroma.mix(
@@ -22,7 +22,7 @@ const okThemeDarkBlackDim = chroma.mix(
 
 // red
 const C_RED = 0.1;
-const H_RED = 13;
+const H_RED = 18;
 const okThemeDarkRed = chroma.oklch(L, C_RED, H_RED);
 const okThemeDarkRedBright = chroma.oklch(
   L_BRIGHT,
@@ -51,7 +51,7 @@ const okThemeDarkGreenDim = chroma.mix(
 );
 
 // yellow
-const C_YELLOW = 0.06;
+const C_YELLOW = 0.07;
 const H_YELLOW = 85;
 const okThemeDarkYellow = chroma.oklch(L, C_YELLOW, H_YELLOW);
 const okThemeDarkYellowBright = chroma.oklch(
@@ -114,7 +114,7 @@ const okThemeDarkCyanDim = chroma.mix(
 const L_WHITE = 0.85;
 const L_WHITE_BRIGHT = 0.95;
 const C_WHITE = 0.01;
-const H_WHITE = 280;
+const H_WHITE = 288;
 const okThemeDarkWhite = chroma.oklch(L_WHITE, C_WHITE, H_WHITE);
 const okThemeDarkWhiteBright = chroma.oklch(L_WHITE_BRIGHT, C_WHITE, H_WHITE);
 const okThemeDarkWhiteDim = chroma.mix(
